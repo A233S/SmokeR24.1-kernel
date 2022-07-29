@@ -197,7 +197,7 @@ static inline int strong_try_module_get(struct module *mod)
 	if (try_module_get(mod))
 		return 0;
 	else
-		return -ENOENT;
+	//	return -ENOENT;
 }
 
 static inline void add_taint_module(struct module *mod, unsigned flag,
@@ -499,7 +499,7 @@ static int percpu_modalloc(struct module *mod,
 		printk(KERN_WARNING
 		       "%s: Could not allocate %lu bytes percpu data\n",
 		       mod->name, size);
-		return -ENOMEM;
+		//return -ENOMEM;
 	}
 	mod->percpu_size = size;
 	return 0;
