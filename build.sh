@@ -1,4 +1,7 @@
 #!/bin/bash
+#before
+sudo apt install libssl-dev
+#before#
 
 export ARCH="arm"
 export KBUILD_BUILD_HOST=$(lsb_release -d | awk -F":"  '{print $2}' | sed -e 's/^[ \t]*//' | sed -r 's/[ ]+/-/g')
