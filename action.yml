@@ -1,0 +1,12 @@
+name: Make Actions Demo
+on: push
+jobs:
+  my_first_job:
+    name: My first job
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Print Hello Word
+      env:
+        MY_BOX: Hello Word
+      run: |
+        echo $MY_BOX
