@@ -12,10 +12,8 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - name: Print Hello Word
-      uses: A233S/SmokeR24.1-kernel@SmokeR24.1-stable-P
       env:
         MY_BOX: Hello Word
-    - name: asa
       run: |
         echo $MY_BOX
         ls
