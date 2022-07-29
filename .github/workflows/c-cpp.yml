@@ -1,23 +1,39 @@
-name: BOX
+name: unzip
 
 on:
-  push:
-    branches: [ "SmokeR24.1-stable-P" ]
-  pull_request:
-    branches: [ "SmokeR24.1-stable-P" ]
+      push:
+        branches: 
+          # master为你需要编译的当前固件的分支
+          - SmokeR24.1-stable-P
+      # release:
+      #   types: [published]
 
 jobs:
-  build:
-    name: My first job
-    runs-on: ubuntu-18.04
-    steps:
-    - name: Print Hello Word
-      env:
-        MY_BOX: Hello Word
-      uses: A233S/SmokeR24.1-kernel@SmokeR24.1-stable-P
-    - name: adsa
-      run: |
-        echo $MY_BOX
-        ls
-        pwd
-        echo 111 > 1.txt
+
+      build:
+
+        runs-on: ubuntu-latest
+
+        steps:
+
+          - name: Checkout
+            uses: actions/checkout@master
+            # with中的master为你需要编译的当前固件的分支
+            with:
+              ref: SmokeR24.1-stable-P
+
+          - name: Space cleanup
+            env:
+              DEBIAN_FRONTEND: noninteractive
+            run: |
+              ls
+              pwd
+              df -h
+              mkdir txt
+              echo you > ./txt/1.txt
+          # 因为我需要得到编译后的ipk插件，所以我选择将完整的/bin/上传
+          - name: Upload artifact
+            uses: actions/upload-artifact@master
+            with:
+              name: OpenWrt firmware
+              path: ./txt/
