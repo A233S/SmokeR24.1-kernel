@@ -12,3 +12,4 @@ sudo apt-get install gcc-arm-linux-gnueabihf \
   p7zip-full
 #bash build.sh
 make O=./kernel 
+exit $?
