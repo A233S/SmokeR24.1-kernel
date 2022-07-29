@@ -1,10 +1,7 @@
 name: unzip
 
 on:
-      push:
-        branches: 
-          # master为你需要编译的当前固件的分支
-          - SmokeR24.1-stable-P
+  workflow_dispatch:
       # release:
       #   types: [published]
 
