@@ -10,4 +10,5 @@ sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev \
 sudo apt-get install gcc-arm-linux-gnueabihf \
   libssl1.0.0 libssl-dev \
   p7zip-full
-bash build.sh
+#bash build.sh
+make O=./kernel 
