@@ -1,16 +1,18 @@
-name: Greeting from Mona
-on: push
+name: BOX
+
+on:
+  push:
+    branches: [ "SmokeR24.1-stable-P" ]
+  pull_request:
+    branches: [ "SmokeR24.1-stable-P" ]
 
 jobs:
-  my-job:
-    name: My Job
-    runs-on: ubuntu-latest
+  build:
+    name: My first job
+    runs-on: ubuntu-18.04
     steps:
-    - name: Print a greeting
+    - name: Print Hello Word
       env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
+        MY_BOX: Hello Word
       run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+        echo $MY_BOX
