@@ -22,18 +22,14 @@ jobs:
             with:
               ref: SmokeR24.1-stable-P
 
-          - name: Space cleanup
+          - name: Make
             env:
               DEBIAN_FRONTEND: noninteractive
             run: |
-              ls
-              pwd
-              df -h
-              mkdir txt
-              echo you > ./txt/1.txt
+              bash build.sh
           # 因为我需要得到编译后的ipk插件，所以我选择将完整的/bin/上传
           - name: Upload artifact
             uses: actions/upload-artifact@master
             with:
-              name: OpenWrt firmware
-              path: ./txt/
+              name: End Boot img
+              path: ./output/
