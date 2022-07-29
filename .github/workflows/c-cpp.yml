@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "SmokeR24.1-stable-P" ]
+  pull_request:
+    branches: [ "SmokeR24.1-stable-P" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: A233S/SmokeR24.1-kernel@SmokeR24.1-stable-P
+#    - name: configure
+#      run: ./configure
+#    - name: make
+#      run: make
+#    - name: make check
+#      run: make check
+#    - name: make distcheck
+#      run: make distcheck
+    - name: hhh
+      run: echo asa
