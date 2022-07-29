@@ -21,6 +21,7 @@ OUTPUT_DIR="$KERNEL_DIR/output"
 ERROR=0
 HEAD=1
 WARNING=2
+make wahoo_defconfig
 
 function printfc() {
 	if [[ $2 == $ERROR ]]; then
