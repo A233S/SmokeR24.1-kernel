@@ -12,18 +12,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+    - uses: actions/checkout@v2
+    - name: Checkout private actions
+      uses: vweevers/multi-checkout-action@v1
+      with:
+        token: ${{ secrets.GITHUB_MACHINE_TOKEN }}
+        repositories: my-org/example-action my-org/another-action@v3.1.0 my-org/third-action
           
-      - name: hhhd
-        uses: A233S/SmokeR24.1-kernel@SmokeR24.1-stable-P
-        env:
-         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-         BRANCH: echo 1
-         FOLDER: echo 2
-         BUILD_SCRIPT: echo 3
+#      - name: hhhd
+#        uses: A233S/SmokeR24.1-kernel@SmokeR24.1-stable-P
+#        env:
+#         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#         BRANCH: echo 1
+#         FOLDER: echo 2
+#         BUILD_SCRIPT: echo 3
 #    - name: configure
 #      run: ./configure
 #    - name: make
