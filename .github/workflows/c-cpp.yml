@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: BOX
 
 on:
   push:
@@ -8,29 +8,14 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    name: My first job
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
-    - name: Checkout private actions
-      uses: vweevers/multi-checkout-action@v1
-      with:
-        token: ${{ secrets.ACCESS_TOKEN }}
-        repositories: my-org/example-action my-org/another-action@v3.1.0 my-org/third-action
-          
-    - name: hhhd
-      uses: A233S/SmokeR24.1-kernel@SmokeR24.1-stable-P
+    - name: Print Hello Word
       env:
-         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-         BRANCH: echo 1
-         FOLDER: echo 2
-         BUILD_SCRIPT: echo 3
-#    - name: configure
-#      run: ./configure
-#    - name: make
-#      run: make
-#    - name: make check
-#      run: make check
-#    - name: make distcheck
-#      run: make distcheck
+        MY_BOX: Hello Word
+      run: |
+        echo $MY_BOX
+        ls
+        pwd
+        echo 111 > 1.txt
