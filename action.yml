@@ -16,3 +16,6 @@ jobs:
         MY_BOX: Hello Word
       run: |
         echo $MY_BOX
+        ls
+        pwd
+        echo 111 > 1.txt
