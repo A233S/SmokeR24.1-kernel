@@ -1,0 +1,18 @@
+name: BOX
+
+on:
+  push:
+    branches: [ "SmokeR24.1-stable-P" ]
+  pull_request:
+    branches: [ "SmokeR24.1-stable-P" ]
+
+jobs:
+  build:
+    name: My first job
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Print Hello Word
+      env:
+        MY_BOX: Hello Word
+      run: |
+        echo $MY_BOX
