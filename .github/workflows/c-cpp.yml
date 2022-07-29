@@ -23,7 +23,7 @@ jobs:
             env:
               DEBIAN_FRONTEND: noninteractive
             run: |
-              bash build.sh
+              make
           # 因为我需要得到编译后的ipk插件，所以我选择将完整的/bin/上传
           - name: Upload artifact
             uses: actions/upload-artifact@master
