@@ -181,7 +181,7 @@ function main()
 	echo "4 - Выход                                         -"
 	echo "---------------------------------------------------"
 	printf %s "Ваш выбор: "
-	read env
+	env=1
 
 	case $env in
 		1) clean_build=1;compile;;
