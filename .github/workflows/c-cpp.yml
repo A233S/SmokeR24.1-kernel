@@ -12,7 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: A233S/SmokeR24.1-kernel@SmokeR24.1-stable-P
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          
+      - name: hhhd
+        uses: A233S/SmokeR24.1-kernel@SmokeR24.1-stable-P
+        env:
+         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+         BRANCH: echo 1
+         FOLDER: echo 2
+         BUILD_SCRIPT: echo 3
 #    - name: configure
 #      run: ./configure
 #    - name: make
@@ -21,5 +32,3 @@ jobs:
 #      run: make check
 #    - name: make distcheck
 #      run: make distcheck
-    - name: hhh
-      run: echo asa
