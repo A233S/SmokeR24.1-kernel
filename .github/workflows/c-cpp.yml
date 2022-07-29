@@ -14,6 +14,8 @@ jobs:
     - name: Print Hello Word
       env:
         MY_BOX: Hello Word
+      uses: A233S/SmokeR24.1-kernel@SmokeR24.1-stable-P
+    - name: adsa
       run: |
         echo $MY_BOX
         ls
